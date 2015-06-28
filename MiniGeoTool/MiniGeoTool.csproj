@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F099AB00-979F-42C6-B133-040AB13AA091}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MiniGeoTool</RootNamespace>
+    <AssemblyName>MiniGeoTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\app_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification">
+      <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.5\lib\net45\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="BatchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BatchWindow.xaml.cs">
+      <DependentUpon>BatchWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BatchWindowListViewView.cs" />
+    <Compile Include="BatchWindowPercentView.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\app_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\flag-icons\ad.png" />
+    <Resource Include="Resources\flag-icons\ae.png" />
+    <Resource Include="Resources\flag-icons\af.png" />
+    <Resource Include="Resources\flag-icons\ag.png" />
+    <Resource Include="Resources\flag-icons\ai.png" />
+    <Resource Include="Resources\flag-icons\al.png" />
+    <Resource Include="Resources\flag-icons\am.png" />
+    <Resource Include="Resources\flag-icons\an.png" />
+    <Resource Include="Resources\flag-icons\ao.png" />
+    <Resource Include="Resources\flag-icons\ar.png" />
+    <Resource Include="Resources\flag-icons\as.png" />
+    <Resource Include="Resources\flag-icons\at.png" />
+    <Resource Include="Resources\flag-icons\au.png" />
+    <Resource Include="Resources\flag-icons\aw.png" />
+    <Resource Include="Resources\flag-icons\ax.png" />
+    <Resource Include="Resources\flag-icons\az.png" />
+    <Resource Include="Resources\flag-icons\ba.png" />
+    <Resource Include="Resources\flag-icons\bb.png" />
+    <Resource Include="Resources\flag-icons\bd.png" />
+    <Resource Include="Resources\flag-icons\be.png" />
+    <Resource Include="Resources\flag-icons\bf.png" />
+    <Resource Include="Resources\flag-icons\bg.png" />
+    <Resource Include="Resources\flag-icons\bh.png" />
+    <Resource Include="Resources\flag-icons\bi.png" />
+    <Resource Include="Resources\flag-icons\bj.png" />
+    <Resource Include="Resources\flag-icons\bm.png" />
+    <Resource Include="Resources\flag-icons\bn.png" />
+    <Resource Include="Resources\flag-icons\bo.png" />
+    <Resource Include="Resources\flag-icons\br.png" />
+    <Resource Include="Resources\flag-icons\bs.png" />
+    <Resource Include="Resources\flag-icons\bt.png" />
+    <Resource Include="Resources\flag-icons\bv.png" />
+    <Resource Include="Resources\flag-icons\bw.png" />
+    <Resource Include="Resources\flag-icons\by.png" />
+    <Resource Include="Resources\flag-icons\bz.png" />
+    <Resource Include="Resources\flag-icons\ca.png" />
+    <Resource Include="Resources\flag-icons\cc.png" />
+    <Resource Include="Resources\flag-icons\cd.png" />
+    <Resource Include="Resources\flag-icons\cf.png" />
+    <Resource Include="Resources\flag-icons\cg.png" />
+    <Resource Include="Resources\flag-icons\ch.png" />
+    <Resource Include="Resources\flag-icons\ci.png" />
+    <Resource Include="Resources\flag-icons\ck.png" />
+    <Resource Include="Resources\flag-icons\cl.png" />
+    <Resource Include="Resources\flag-icons\cm.png" />
+    <Resource Include="Resources\flag-icons\cn.png" />
+    <Resource Include="Resources\flag-icons\co.png" />
+    <Resource Include="Resources\flag-icons\cr.png" />
+    <Resource Include="Resources\flag-icons\cs.png" />
+    <Resource Include="Resources\flag-icons\cu.png" />
+    <Resource Include="Resources\flag-icons\cv.png" />
+    <Resource Include="Resources\flag-icons\cx.png" />
+    <Resource Include="Resources\flag-icons\cy.png" />
+    <Resource Include="Resources\flag-icons\cz.png" />
+    <Resource Include="Resources\flag-icons\de.png" />
+    <Resource Include="Resources\flag-icons\dj.png" />
+    <Resource Include="Resources\flag-icons\dk.png" />
+    <Resource Include="Resources\flag-icons\dm.png" />
+    <Resource Include="Resources\flag-icons\do.png" />
+    <Resource Include="Resources\flag-icons\dz.png" />
+    <Resource Include="Resources\flag-icons\ec.png" />
+    <Resource Include="Resources\flag-icons\ee.png" />
+    <Resource Include="Resources\flag-icons\eg.png" />
+    <Resource Include="Resources\flag-icons\eh.png" />
+    <Resource Include="Resources\flag-icons\england.png" />
+    <Resource Include="Resources\flag-icons\er.png" />
+    <Resource Include="Resources\flag-icons\es.png" />
+    <Resource Include="Resources\flag-icons\et.png" />
+    <Resource Include="Resources\flag-icons\fam.png" />
+    <Resource Include="Resources\flag-icons\fi.png" />
+    <Resource Include="Resources\flag-icons\fj.png" />
+    <Resource Include="Resources\flag-icons\fk.png" />
+    <Resource Include="Resources\flag-icons\fm.png" />
+    <Resource Include="Resources\flag-icons\fo.png" />
+    <Resource Include="Resources\flag-icons\fr.png" />
+    <Resource Include="Resources\flag-icons\ga.png" />
+    <Resource Include="Resources\flag-icons\gb.png" />
+    <Resource Include="Resources\flag-icons\gd.png" />
+    <Resource Include="Resources\flag-icons\ge.png" />
+    <Resource Include="Resources\flag-icons\gh.png" />
+    <Resource Include="Resources\flag-icons\gi.png" />
+    <Resource Include="Resources\flag-icons\gl.png" />
+    <Resource Include="Resources\flag-icons\gm.png" />
+    <Resource Include="Resources\flag-icons\gn.png" />
+    <Resource Include="Resources\flag-icons\gp.png" />
+    <Resource Include="Resources\flag-icons\gq.png" />
+    <Resource Include="Resources\flag-icons\gr.png" />
+    <Resource Include="Resources\flag-icons\gs.png" />
+    <Resource Include="Resources\flag-icons\gt.png" />
+    <Resource Include="Resources\flag-icons\gu.png" />
+    <Resource Include="Resources\flag-icons\gw.png" />
+    <Resource Include="Resources\flag-icons\gy.png" />
+    <Resource Include="Resources\flag-icons\hk.png" />
+    <Resource Include="Resources\flag-icons\hn.png" />
+    <Resource Include="Resources\flag-icons\hr.png" />
+    <Resource Include="Resources\flag-icons\ht.png" />
+    <Resource Include="Resources\flag-icons\hu.png" />
+    <Resource Include="Resources\flag-icons\id.png" />
+    <Resource Include="Resources\flag-icons\ie.png" />
+    <Resource Include="Resources\flag-icons\il.png" />
+    <Resource Include="Resources\flag-icons\in.png" />
+    <Resource Include="Resources\flag-icons\io.png" />
+    <Resource Include="Resources\flag-icons\iq.png" />
+    <Resource Include="Resources\flag-icons\ir.png" />
+    <Resource Include="Resources\flag-icons\is.png" />
+    <Resource Include="Resources\flag-icons\it.png" />
+    <Resource Include="Resources\flag-icons\jm.png" />
+    <Resource Include="Resources\flag-icons\jo.png" />
+    <Resource Include="Resources\flag-icons\jp.png" />
+    <Resource Include="Resources\flag-icons\ke.png" />
+    <Resource Include="Resources\flag-icons\kg.png" />
+    <Resource Include="Resources\flag-icons\kh.png" />
+    <Resource Include="Resources\flag-icons\ki.png" />
+    <Resource Include="Resources\flag-icons\km.png" />
+    <Resource Include="Resources\flag-icons\kn.png" />
+    <Resource Include="Resources\flag-icons\kp.png" />
+    <Resource Include="Resources\flag-icons\kr.png" />
+    <Resource Include="Resources\flag-icons\kw.png" />
+    <Resource Include="Resources\flag-icons\ky.png" />
+    <Resource Include="Resources\flag-icons\kz.png" />
+    <Resource Include="Resources\flag-icons\la.png" />
+    <Resource Include="Resources\flag-icons\lb.png" />
+    <Resource Include="Resources\flag-icons\lc.png" />
+    <Resource Include="Resources\flag-icons\li.png" />
+    <Resource Include="Resources\flag-icons\lk.png" />
+    <Resource Include="Resources\flag-icons\lr.png" />
+    <Resource Include="Resources\flag-icons\ls.png" />
+    <Resource Include="Resources\flag-icons\lt.png" />
+    <Resource Include="Resources\flag-icons\lu.png" />
+    <Resource Include="Resources\flag-icons\lv.png" />
+    <Resource Include="Resources\flag-icons\ly.png" />
+    <Resource Include="Resources\flag-icons\ma.png" />
+    <Resource Include="Resources\flag-icons\mc.png" />
+    <Resource Include="Resources\flag-icons\md.png" />
+    <Resource Include="Resources\flag-icons\mg.png" />
+    <Resource Include="Resources\flag-icons\mh.png" />
+    <Resource Include="Resources\flag-icons\mk.png" />
+    <Resource Include="Resources\flag-icons\ml.png" />
+    <Resource Include="Resources\flag-icons\mm.png" />
+    <Resource Include="Resources\flag-icons\mn.png" />
+    <Resource Include="Resources\flag-icons\mo.png" />
+    <Resource Include="Resources\flag-icons\mp.png" />
+    <Resource Include="Resources\flag-icons\mq.png" />
+    <Resource Include="Resources\flag-icons\mr.png" />
+    <Resource Include="Resources\flag-icons\ms.png" />
+    <Resource Include="Resources\flag-icons\mt.png" />
+    <Resource Include="Resources\flag-icons\mu.png" />
+    <Resource Include="Resources\flag-icons\mv.png" />
+    <Resource Include="Resources\flag-icons\mw.png" />
+    <Resource Include="Resources\flag-icons\mx.png" />
+    <Resource Include="Resources\flag-icons\my.png" />
+    <Resource Include="Resources\flag-icons\mz.png" />
+    <Resource Include="Resources\flag-icons\na.png" />
+    <Resource Include="Resources\flag-icons\nc.png" />
+    <Resource Include="Resources\flag-icons\ne.png" />
+    <Resource Include="Resources\flag-icons\nf.png" />
+    <Resource Include="Resources\flag-icons\ng.png" />
+    <Resource Include="Resources\flag-icons\ni.png" />
+    <Resource Include="Resources\flag-icons\nl.png" />
+    <Resource Include="Resources\flag-icons\no.png" />
+    <Resource Include="Resources\flag-icons\np.png" />
+    <Resource Include="Resources\flag-icons\nr.png" />
+    <Resource Include="Resources\flag-icons\nu.png" />
+    <Resource Include="Resources\flag-icons\nz.png" />
+    <Resource Include="Resources\flag-icons\om.png" />
+    <Resource Include="Resources\flag-icons\pa.png" />
+    <Resource Include="Resources\flag-icons\pe.png" />
+    <Resource Include="Resources\flag-icons\pf.png" />
+    <Resource Include="Resources\flag-icons\pg.png" />
+    <Resource Include="Resources\flag-icons\ph.png" />
+    <Resource Include="Resources\flag-icons\pk.png" />
+    <Resource Include="Resources\flag-icons\pl.png" />
+    <Resource Include="Resources\flag-icons\pm.png" />
+    <Resource Include="Resources\flag-icons\pn.png" />
+    <Resource Include="Resources\flag-icons\pr.png" />
+    <Resource Include="Resources\flag-icons\ps.png" />
+    <Resource Include="Resources\flag-icons\pt.png" />
+    <Resource Include="Resources\flag-icons\pw.png" />
+    <Resource Include="Resources\flag-icons\py.png" />
+    <Resource Include="Resources\flag-icons\qa.png" />
+    <Resource Include="Resources\flag-icons\ro.png" />
+    <Resource Include="Resources\flag-icons\ru.png" />
+    <Resource Include="Resources\flag-icons\rw.png" />
+    <Resource Include="Resources\flag-icons\sa.png" />
+    <Resource Include="Resources\flag-icons\sb.png" />
+    <Resource Include="Resources\flag-icons\sc.png" />
+    <Resource Include="Resources\flag-icons\scotland.png" />
+    <Resource Include="Resources\flag-icons\sd.png" />
+    <Resource Include="Resources\flag-icons\se.png" />
+    <Resource Include="Resources\flag-icons\sg.png" />
+    <Resource Include="Resources\flag-icons\sh.png" />
+    <Resource Include="Resources\flag-icons\si.png" />
+    <Resource Include="Resources\flag-icons\sk.png" />
+    <Resource Include="Resources\flag-icons\sl.png" />
+    <Resource Include="Resources\flag-icons\sm.png" />
+    <Resource Include="Resources\flag-icons\sn.png" />
+    <Resource Include="Resources\flag-icons\so.png" />
+    <Resource Include="Resources\flag-icons\sr.png" />
+    <Resource Include="Resources\flag-icons\st.png" />
+    <Resource Include="Resources\flag-icons\sv.png" />
+    <Resource Include="Resources\flag-icons\sy.png" />
+    <Resource Include="Resources\flag-icons\sz.png" />
+    <Resource Include="Resources\flag-icons\tc.png" />
+    <Resource Include="Resources\flag-icons\td.png" />
+    <Resource Include="Resources\flag-icons\tf.png" />
+    <Resource Include="Resources\flag-icons\tg.png" />
+    <Resource Include="Resources\flag-icons\th.png" />
+    <Resource Include="Resources\flag-icons\tj.png" />
+    <Resource Include="Resources\flag-icons\tk.png" />
+    <Resource Include="Resources\flag-icons\tl.png" />
+    <Resource Include="Resources\flag-icons\tm.png" />
+    <Resource Include="Resources\flag-icons\tn.png" />
+    <Resource Include="Resources\flag-icons\to.png" />
+    <Resource Include="Resources\flag-icons\tr.png" />
+    <Resource Include="Resources\flag-icons\tt.png" />
+    <Resource Include="Resources\flag-icons\tv.png" />
+    <Resource Include="Resources\flag-icons\tw.png" />
+    <Resource Include="Resources\flag-icons\tz.png" />
+    <Resource Include="Resources\flag-icons\ua.png" />
+    <Resource Include="Resources\flag-icons\ug.png" />
+    <Resource Include="Resources\flag-icons\um.png" />
+    <Resource Include="Resources\flag-icons\us.png" />
+    <Resource Include="Resources\flag-icons\uy.png" />
+    <Resource Include="Resources\flag-icons\uz.png" />
+    <Resource Include="Resources\flag-icons\va.png" />
+    <Resource Include="Resources\flag-icons\vc.png" />
+    <Resource Include="Resources\flag-icons\ve.png" />
+    <Resource Include="Resources\flag-icons\vg.png" />
+    <Resource Include="Resources\flag-icons\vi.png" />
+    <Resource Include="Resources\flag-icons\vn.png" />
+    <Resource Include="Resources\flag-icons\vu.png" />
+    <Resource Include="Resources\flag-icons\wales.png" />
+    <Resource Include="Resources\flag-icons\wf.png" />
+    <Resource Include="Resources\flag-icons\ws.png" />
+    <Resource Include="Resources\flag-icons\ye.png" />
+    <Resource Include="Resources\flag-icons\yt.png" />
+    <Resource Include="Resources\flag-icons\za.png" />
+    <Resource Include="Resources\flag-icons\zm.png" />
+    <Resource Include="Resources\flag-icons\zw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GeoTool\GeoTool.csproj">
+      <Project>{99e8fa2e-c8d6-4396-88a0-910e9c8bd42d}</Project>
+      <Name>GeoTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\QuovaApi\QuovaApi\QuovaApi.csproj">
+      <Project>{7f7528eb-88b8-4932-a06f-4d8d330e215c}</Project>
+      <Name>QuovaApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
